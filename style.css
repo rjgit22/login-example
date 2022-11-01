@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(117, 0, 0, 0.233);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==========IMAGE SLIDESHOW CSS================ */
+.images-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+  flex-wrap: wrap;
+  margin: 2rem;
+  flex-grow: 1;
+}
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 20px;
+  transform: translateY(-50%);
+  color: rgba(128, 128, 128, 0.678);
+  border: 0;
+}
+
+#right {
+  position: absolute;
+  left: calc(100% - 80px);
+  transform: translateY(-50%);
+}
+
+.main-image {
+  width: 38rem;
+  height: 35rem;
+  overflow: hidden;
+  position: relative;
+}
+.main-image img {
+  position: absolute;
+  top: -65%;
+  left: -35%;
+  width: 70rem;
+}
+
+.img-tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.img-tile {
+  width: 6.5rem;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.img-tile img {
+  width: 10rem;
+}
+
+/* ==============PRODUCT INFORMATION CSS==================== */
+
+.info-container {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  flex-wrap: wrap;
+  margin: 2rem;
+  margin-top: 10px;
+}
+
+h2.title-info {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+}
+
+h4.maker-info {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+p.description-info {
+  font-family: "Nunito", "Courier New", Courier, monospace;
+  font-weight: 600;
+  max-width: 60%;
+}
+
+.review-info {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(0, 255, 136);
+}
+
+.review-info > p {
+  font-family: "Courier New", Courier, monospace;
+  color: gray;
+}
+
+.review-info span {
+  color: rgb(0, 255, 136);
+  margin-right: 5px;
+}
+
+a.submit-review {
+  color: grey;
+}
+
+.price-info {
+  font-family: "Source Code Pro";
+  font-weight: 600;
+  margin: 2rem 0;
+  font-size: 3.25rem;
+}
+
+.shipping-info {
+  color: grey;
+  margin-bottom: 1rem;
+}
+
+.shipping-info > i {
+  margin-right: 5px;
+}
+
+a.button {
+  font-family: sans-serif;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background-color: black;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  border: 2px solid black;
+  font-weight: 900;
+}
+
+.button.outline {
+  background-color: #fff;
+  color: black;
+}
+
+/* ====================Footer CSS=============== */
+
+.payment {
+  display: inline-flex;
+  font-family: "Nunito";
+  max-width: 30%;
+}
+
+.heading {
+  display: inline-flex;
+}
+.heading h3 {
+  font-family: "Nunito";
+  font-weight: bolder;
+}
+.content p {
+  margin: 0;
+  padding: 0;
+  max-width: 60%;
+}
+
+footer {
+  min-width: 100%;
+  background-color: rgb(66, 66, 66);
+}
+
+.payment img {
+  height: 40px;
+  margin-top: 7px;
+  margin-right: 7px;
+}
+
+.foooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 1.75rem;
+  color: #fff;
+}
+
+/* =========MAKING RESPONSIVE AND BEING RESPONSIBLE============ */
+
+@media (max-width: 1300px) {
+  .main-image,
+  .img-tiles {
+    max-width: 80%;
+  }
+
+  .img-tile:last-child {
+    display: none;
+  }
+  h2.title-info {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1055px) {
+  .main-image,
+  .img-tiles {
+    max-width: 70%;
+  }
+  body {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 796px) {
+  .main-image,
+  .img-tiles {
+    max-width: 60%;
+  }
+  .img-tile:nth-last-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-image,
+  .img-tiles,
+  .images-container {
+    max-width: 90vw;
+  }
+  .info-container {
+    max-width: 100vw;
+    padding: 1rem;
+  }
+  .img-tile:nth-last-child(2) {
+    display: flex;
+  }
+  .foooter {
+    margin: 2rem;
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+  p.description-info {
+    font-size: 1rem;
+  }
+  .payment {
+    min-width: 100%;
+    flex-direction: column;
+    /* flex-grow: 1; */
+  }
+  .payment img {
+    margin: 0;
+    max-width: 10%;
+  }
+}
